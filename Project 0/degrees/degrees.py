@@ -93,13 +93,11 @@ def shortest_path(source, target):
 
     while True:
         if frontier.empty():
-            raise Exception("no solution")
+            return None
 
         node = frontier.remove()
 
         if node.state == target:
-            actions = []
-            cells = []
             solution = []
             while node.parent is not None:
                 solution.append((node.action, node.state))
